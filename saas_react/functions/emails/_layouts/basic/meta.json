@@ -1,0 +1,10 @@
+{
+  "Name": "Basic",
+  "Alias": "basic",
+  "TemplateType": "Layout",
+  "TestRenderModel": {
+    "product_url": ",https://saas-react-a9393.web.app/",
+    "product_name": "Text Hacker OCR",
+    "company_name": "Text Hacker"
+  }
+}

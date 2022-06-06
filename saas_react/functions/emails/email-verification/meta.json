@@ -1,0 +1,12 @@
+{
+  "Name": "Email verification",
+  "Alias": "email-verification",
+  "Subject": "Please verify your email for Text Hacker",
+  "TemplateType": "Standard",
+  "LayoutTemplate": "basic",
+  "TestRenderModel": {
+    "product_url": "https://saas-react-a9393.web.app/",
+    "product_name": "Text Hacker OCR",
+    "company_name": "Text Hacker"
+  }
+}

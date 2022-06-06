@@ -1,0 +1,16 @@
+{
+  "Name": "Welcome",
+  "Alias": "welcome",
+  "Subject": "Welcome to Text-Hacker!",
+  "TemplateType": "Standard",
+  "LayoutTemplate": "basic",
+  "TestRenderModel": {
+    "product_url": "product_url_Value",
+    "product_name": "product_name_Value",
+    "action_url": "action_url_Value",
+    "support_email": "support_email_Value",
+    "sender_name": "Lauren McGuire",
+    "twitter_url": "twitter_url_Value",
+    "company_name": "Text-Hacker"
+  }
+}

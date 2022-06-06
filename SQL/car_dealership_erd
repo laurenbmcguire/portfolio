@@ -1,0 +1,87 @@
+CREATE TABLE "salespeople" (
+  "employee_id" SERIAL PRIMARY KEY,
+  "first_name" varchar,
+  "last_name" varchar,
+  "emp_sales" int
+);
+
+CREATE TABLE "inventory" (
+  "vehicle_id" SERIAL PRIMARY KEY,
+  "make" varchar,
+  "model" varchar,
+  "year" date,
+  "price" float,
+  "sold_by" int,
+  "purchased_by" int
+);
+
+CREATE TABLE "car_invoices" (
+  "sale_id" SERIAL PRIMARY KEY,
+  "vehicle_id" int,
+  "price" int,
+  "employee_id" int,
+  "customer_id" int,
+  "date" date
+);
+
+CREATE TABLE "service" (
+  "service_id" SERIAL PRIMARY KEY,
+  "customer_id" int,
+  "car_serial" int,
+  "date_of_service" date,
+  "total_amount" float
+);
+
+CREATE TABLE "service_team" (
+  "employee_id" SERIAL PRIMARY KEY,
+  "first_name" varchar,
+  "last_name" varchar,
+  "assigned_tickets" int
+);
+
+CREATE TABLE "parts_ordered" (
+  "part_id" int PRIMARY KEY,
+  "date_ordered" date,
+  "service_id" int,
+  "customer_id" int,
+  "amount" float
+);
+
+CREATE TABLE "revenue" (
+  "date_of" date PRIMARY KEY,
+  "service_id" int,
+  "date_of_service" date,
+  "employee_id" int,
+  "sale_id" int,
+  "customer_id" int,
+  "transaction_total" float
+);
+
+CREATE TABLE "customers" (
+  "customer_id" [pk],
+  "transactions" int
+);
+
+ALTER TABLE "car_invoices" ADD FOREIGN KEY ("employee_id") REFERENCES "salespeople" ("employee_id");
+
+ALTER TABLE "inventory" ADD FOREIGN KEY ("sold_by") REFERENCES "salespeople" ("employee_id");
+
+ALTER TABLE "customers" ADD FOREIGN KEY ("customer_id") REFERENCES "inventory" ("purchased_by");
+
+ALTER TABLE "customers" ADD FOREIGN KEY ("customer_id") REFERENCES "car_invoices" ("customer_id");
+
+ALTER TABLE "service" ADD FOREIGN KEY ("customer_id") REFERENCES "customers" ("customer_id");
+
+ALTER TABLE "customers" ADD FOREIGN KEY ("customer_id") REFERENCES "revenue" ("customer_id");
+
+ALTER TABLE "revenue" ADD FOREIGN KEY ("transaction_total") REFERENCES "parts_ordered" ("amount");
+
+ALTER TABLE "revenue" ADD FOREIGN KEY ("transaction_total") REFERENCES "car_invoices" ("price");
+
+ALTER TABLE "revenue" ADD FOREIGN KEY ("transaction_total") REFERENCES "service" ("total_amount");
+
+ALTER TABLE "service_team" ADD FOREIGN KEY ("employee_id") REFERENCES "revenue" ("employee_id");
+
+ALTER TABLE "customers" ADD FOREIGN KEY ("transactions") REFERENCES "service" ("service_id");
+
+ALTER TABLE "customers" ADD FOREIGN KEY ("transactions") REFERENCES "car_invoices" ("sale_id");

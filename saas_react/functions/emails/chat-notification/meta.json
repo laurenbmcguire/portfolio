@@ -1,0 +1,16 @@
+{
+  "Name": "chat message notification",
+  "Alias": "chat-notification",
+  "Subject": "🎉    You received a new chat message!",
+  "TemplateType": "Standard",
+  "LayoutTemplate": "basic",
+  "TestRenderModel": {
+    "product_url": "https://saas-react-a9393.web.app/",
+    "product_name": "Text Hacker OCR",
+    "message": "message_Value",
+    "chat_sender": "chat_sender_Value",
+    "timestamp": "timestamp_Value",
+    "company_name": "Text Hacker",
+    "chat_websiteURL": "https://saas-react-a9393.web.app/"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Name": "Password reset",
+  "Alias": "password-reset",
+  "Subject": "Set up a new password for Text Hacker",
+  "TemplateType": "Standard",
+  "LayoutTemplate": "basic",
+  "TestRenderModel": {
+    "product_url": "https://saas-react-a9393.web.app/",
+    "product_name": "Text Hacker OCR",
+    "company_name": "Text Hacker"
+  }
+}
