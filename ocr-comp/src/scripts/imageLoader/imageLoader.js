@@ -30,7 +30,7 @@ function ImageLoader() {
         withPreview={true}
         buttonText="Select file"
         onChange={onDrop}
-        imgExtension={[".jpg ", ".gif ", ".png ", ".gif "]}
+        imgExtension={[".jpg", ".gif", ".png", ".gif"]}
         maxFileSize={5242880}
       />
       <div className="ocr-button" onClick={runOcr}>
